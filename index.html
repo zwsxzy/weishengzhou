@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="WEISHENGZHOU focuses on applied mathematics, scientific computing, computational modelling, numerical simulation and research-led technical services." />
+  <meta name="theme-color" content="#10242a" />
+  <title>WEISHENGZHOU | Applied Mathematics & Scientific Computing</title>
+  <style>
+    :root{--ink:#182c34;--ink2:#40565d;--navy:#102a32;--navy2:#193d43;--teal:#1e7875;--accent:#e5ad65;--line:#dce5e2;--paper:#f8f9f5;--white:#fff;--mist:#eaf2ee;--radius:17px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #55b9b1;outline-offset:4px}
+    .container{width:min(1140px,calc(100% - 64px));margin:auto}
+    .topbar{background:#fff;border-bottom:1px solid #e5ece8;position:sticky;top:0;z-index:20}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .brand{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:19px;letter-spacing:.105em;color:#153d43;white-space:nowrap}
+    .brandmark{width:38px;height:38px;border:2px solid var(--teal);border-radius:10px;display:grid;place-items:center;transform:rotate(-7deg)}
+    .brandmark span{font-size:19px;font-weight:600;transform:rotate(7deg);font-family:Georgia,serif}
+    .navlinks{display:flex;gap:32px;align-items:center;font-size:13px;font-weight:700;letter-spacing:.015em;color:#435b62}
+    .navlinks a:hover{color:var(--teal)}.navcta{padding:11px 16px;border:1px solid #bccfca;border-radius:7px}
+    .mobile-nav{display:none} .mobile-nav summary{list-style:none;cursor:pointer;font-size:14px;padding:9px 12px;background:#edf4f0;border-radius:7px}
+    .mobile-nav summary::-webkit-details-marker{display:none}.mobile-nav .mobile-items{position:absolute;right:20px;top:72px;padding:15px 20px;background:white;box-shadow:0 12px 30px #13272e18;display:grid;gap:16px;border:1px solid var(--line);border-radius:12px;min-width:200px}
+    .hero{background:radial-gradient(circle at 76% 26%, #24545a 0,transparent 34%),linear-gradient(119deg,#10262f 3%,#18363d 70%,#123036 100%);overflow:hidden;position:relative;color:#f7f9f6}
+    .hero:after{position:absolute;content:'';inset:0;background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to right,transparent,black);pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:53% 47%;min-height:600px;align-items:center;position:relative;z-index:1}
+    .hero-copy{padding:88px 0 92px}.eyebrow{color:#addcd0;font-size:12px;letter-spacing:.22em;font-weight:800;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+    .eyebrow:before{content:'';display:block;width:28px;height:1px;background:#87b9aa}
+    h1,h2,h3,p{margin-top:0} h1{font-size:clamp(43px,5.3vw,73px);letter-spacing:-.049em;line-height:1.065;font-weight:660;margin:26px 0 25px;max-width:670px}
+    h1 em{font-style:normal;color:#9bdbcd}.hero p{font-size:16px;line-height:1.85;color:#ccdcd9;max-width:550px;margin-bottom:32px}
+    .hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+    .btn{background:#d9af7b;color:#1d3133;border-radius:7px;padding:14px 21px;display:inline-flex;align-items:center;gap:11px;font-size:13px;font-weight:800;transition:transform .15s,background .15s}
+    .btn:hover{background:#f0c592;transform:translateY(-2px)}.text-link{font-size:13px;font-weight:750;border-bottom:1px solid #8bc7b9;padding-bottom:5px}
+    .hero-figure{height:510px;position:relative;display:grid;place-items:center}
+    .hero-figure svg{display:block;width:118%;height:105%;transform:translateX(5%);filter:drop-shadow(0 12px 30px #050e1344)}
+    .figure-label{position:absolute;bottom:42px;right:3%;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#a3c7be}
+    .microstrip{background:#eaf1ed;border-bottom:1px solid #dce7e0}
+    .micro-inner{display:flex;justify-content:space-between;gap:25px;padding:19px 0;font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#648079;flex-wrap:wrap}
+    .micro-inner span:before{content:'+';color:var(--teal);margin-right:10px;font-size:15px}
+    section{scroll-margin-top:95px}.section{padding:100px 0}.section-top{max-width:710px;margin-bottom:42px}
+    .kicker{font-size:11px;text-transform:uppercase;font-weight:850;letter-spacing:.17em;color:var(--teal);margin-bottom:15px}
+    h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(32px,3.8vw,50px);letter-spacing:-.03em;font-weight:500;line-height:1.13;margin:0 0 20px;color:#183b40}
+    .lede{font-size:16px;line-height:1.85;color:var(--ink2);margin-bottom:0}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .quote-panel{padding:47px;border-radius:var(--radius);background:#e7eee8;border:1px solid #d6e2d9;min-height:310px;display:flex;flex-direction:column;justify-content:space-between}
+    .quote-panel .math{font:italic 36px Georgia,serif;color:#2c706a;letter-spacing:0.035em}
+    .quote-panel p{font-family:Georgia,serif;color:#274b4d;font-size:24px;line-height:1.55;margin:24px 0 0}
+    .quote-panel .small{font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#6c8581;margin-top:30px}
+    .services{background:#fff;border-top:1px solid #e9efed;border-bottom:1px solid #e9efed}
+    .service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .service{padding:31px 34px 34px;background:#f9fbf8;border:1px solid #e1e9e5;border-radius:14px;position:relative;min-height:240px;transition:border-color .2s,transform .2s}
+    .service:hover{border-color:#96c4b3;transform:translateY(-2px)}.s-number{font-family:Georgia,serif;color:#a8bfb7;font-size:26px;margin-bottom:26px}
+    .service h3{font-size:18px;margin-bottom:11px;letter-spacing:-.025em}.service p{color:#617279;line-height:1.8;font-size:13.5px;max-width:425px;margin:0}
+    .areas-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 52px;margin-top:42px}
+    .area{border-bottom:1px solid #d8e4dd;padding:17px 0;display:flex;align-items:center;gap:17px;font-size:15px;font-weight:680}
+    .area span{color:#6fa79b;font:italic 18px Georgia,serif}
+    .publications{background:#f1f5f0;border-top:1px solid #e1e9e2;border-bottom:1px solid #e1e9e2}
+    .pub-intro{color:#5e7476;line-height:1.75;font-size:14px;max-width:760px;margin:-15px 0 29px}
+    .pub-list{border-top:1px solid #cadbd1}.pub-item{border-bottom:1px solid #cadbd1;display:grid;grid-template-columns:92px 1fr 120px;align-items:start;gap:24px;padding:28px 8px}
+    .pub-year{font:italic 17px Georgia,serif;color:#548c80;padding-top:3px}.pub-title{font-size:17px;line-height:1.52;font-weight:750;margin-bottom:9px;color:#173b40}
+    .pub-note{font-size:12px;line-height:1.7;color:#6e8080;margin:0}.pub-action{padding-top:3px;justify-self:end;color:#1a786c;font-size:12px;font-weight:850;white-space:nowrap}
+    .pub-action:hover{text-decoration:underline}.research-note{margin-top:20px;font-size:12px;line-height:1.7;color:#617574}
+    .contact{padding:90px 0}.contact-panel{padding:52px 60px;border-radius:16px;background:#173a3f;color:#f4f9f5;display:grid;grid-template-columns:1.6fr 1fr;gap:35px;align-items:center}
+    .contact-panel h2{color:#fff;margin-bottom:15px;font-size:40px}.contact-panel p{color:#c9ddda;line-height:1.8;font-size:14px;margin:0}
+    .contact-meta{padding:24px 26px;border-radius:10px;border:1px solid #55746e;background:#ffffff08}
+    .contact-meta small{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:#b0cfca;font-weight:800;display:block;margin-bottom:13px}
+    .contact-meta .email{word-break:break-all;color:#fff;font-size:14px;font-weight:750}.contact-meta .placeholder{color:#e0cba6;font-size:12px;line-height:1.7;margin:0}
+    footer{background:#102931;padding:31px 0;color:#bdcdcb}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer .smallbrand{font-weight:850;letter-spacing:.12em;color:#eff6ef;font-size:13px}footer p{font-size:12px;margin:9px 0 0;line-height:1.7}
+    .footer-right{font-size:12px;text-align:right;color:#94aba8}
+    @media(max-width:900px){.navlinks{gap:17px}.hero-grid{grid-template-columns:1fr 43%;min-height:520px}.hero-figure{height:420px}.hero-copy{padding:70px 0}.about{gap:30px}.contact-panel{padding:38px}}
+    @media(max-width:700px){.container{width:min(100% - 40px,1140px)}.nav{height:70px}.brand{font-size:15px}.brandmark{width:32px;height:32px}.navlinks{display:none}.mobile-nav{display:block}.hero-grid{grid-template-columns:1fr;min-height:auto}.hero-copy{padding:64px 0 0}.hero p{font-size:15px}.hero-figure{height:270px;overflow:hidden}.hero-figure svg{width:100%;height:150%;transform:translateY(-18%)}.figure-label{bottom:16px}.micro-inner{justify-content:start;column-gap:15px;row-gap:9px;font-size:10px}.section{padding:68px 0}.about{grid-template-columns:1fr}.quote-panel{min-height:260px;padding:35px}.quote-panel p{font-size:21px}.service-grid{grid-template-columns:1fr}.service{min-height:auto}.areas-grid{grid-template-columns:1fr;gap:0}.pub-item{grid-template-columns:62px 1fr;gap:12px}.pub-action{grid-column:2;justify-self:start}.contact{padding:60px 0}.contact-panel{grid-template-columns:1fr;gap:25px;padding:32px 25px}.contact-panel h2{font-size:34px}.footer-inner{align-items:start}.footer-right{text-align:left}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.service{transition:none}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a href="#home" class="brand" aria-label="WEISHENGZHOU homepage"><span class="brandmark" aria-hidden="true"><span>∿</span></span>WEISHENGZHOU</a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#expertise">Expertise</a><a href="#publications">Research</a><a class="navcta" href="#contact">Contact ↗</a>
+    </nav>
+    <details class="mobile-nav"><summary>Menu ☰</summary><nav class="mobile-items" aria-label="Mobile navigation"><a href="#about">About</a><a href="#services">Services</a><a href="#expertise">Expertise</a><a href="#publications">Research</a><a href="#contact">Contact</a></nav></details>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Research &amp; technology development</div>
+        <h1>Mathematics for waves.<br><em>Computation for discovery.</em></h1>
+        <p>WEISHENGZHOU focuses on applied mathematics, computational modelling, numerical simulation and scientific computing — bringing rigorous mathematical thinking to complex scientific and engineering problems.</p>
+        <div class="hero-actions"><a class="btn" href="#services">Explore our services <span aria-hidden="true">↗</span></a><a href="#publications" class="text-link">View research publications</a></div>
+      </div>
+      <div class="hero-figure" role="img" aria-label="Abstract wave propagation illustration showing concentric and distorted wave fronts around a central scatterer">
+        <svg viewBox="0 0 650 610" aria-hidden="true" focusable="false">
+          <defs>
+            <radialGradient id="softglow"><stop offset="0" stop-color="#80d2c2" stop-opacity=".26"/><stop offset=".68" stop-color="#3ba395" stop-opacity=".06"/><stop offset="1" stop-color="#18353d" stop-opacity="0"/></radialGradient>
+            <linearGradient id="wave"><stop stop-color="#e7ba7c" stop-opacity="0"/><stop offset=".35" stop-color="#88d4c5" stop-opacity=".8"/><stop offset=".7" stop-color="#b0e7d7" stop-opacity=".75"/><stop offset="1" stop-color="#e4b473" stop-opacity="0"/></linearGradient>
+          </defs>
+          <circle cx="319" cy="301" r="268" fill="url(#softglow)"/>
+          <g stroke="#b4e1d4" stroke-opacity=".13" stroke-width="1" fill="none"><circle cx="319" cy="301" r="53"/><circle cx="319" cy="301" r="99"/><circle cx="319" cy="301" r="144"/><circle cx="319" cy="301" r="190"/><circle cx="319" cy="301" r="235"/></g>
+          <g fill="none" stroke="url(#wave)" stroke-width="1.7" stroke-linecap="round">
+            <path d="M35 204 C139 201 180 166 262 212 S420 276 607 203"/>
+            <path d="M23 229 C145 221 178 200 257 240 S418 298 620 224"/>
+            <path d="M10 252 C156 253 185 237 260 264 S431 313 634 249"/>
+            <path d="M1 279 C139 278 190 274 259 287 S443 325 646 278"/>
+            <path d="M0 306 C133 297 188 309 256 307 S445 311 647 308"/>
+            <path d="M0 335 C138 324 182 340 262 326 S453 293 650 339"/>
+            <path d="M1 361 C137 355 189 363 266 346 S455 276 638 369"/>
+            <path d="M14 388 C150 387 188 383 259 370 S444 272 623 393"/>
+            <path d="M30 419 C149 413 192 401 268 390 S435 277 606 421"/>
+          </g>
+          <g fill="none" stroke="#dbbd8d" opacity=".65"><ellipse cx="320" cy="304" rx="84" ry="91" stroke-width="1.2" stroke-dasharray="3 8"/><circle cx="320" cy="304" r="123" stroke-width=".7" stroke-dasharray="1 10"/></g>
+          <path d="M320 253 C342 249 360 272 362 294 C364 320 346 346 318 348 C285 351 267 327 269 299 C272 269 291 256 320 253Z" fill="#163943" stroke="#e2bf84" stroke-width="2.3"/>
+          <path d="M287 295 Q312 271 340 294 T352 318" fill="none" stroke="#90cbbb" stroke-opacity=".7" stroke-width="1.1"/>
+          <circle cx="320" cy="304" r="4" fill="#f1cb92"/>
+          <g fill="#b3dccd" font-family="Georgia,serif" font-size="14" opacity=".78"><text x="80" y="130">∇²u + k²u = 0</text><text x="438" y="491">∂Ω</text><text x="103" y="507">u<tspan baseline-shift="super" font-size="10">s</tspan>(x)</text></g>
+        </svg>
+        <div class="figure-label">Wave propagation / numerical analysis</div>
+      </div>
+    </div>
+  </section>
+  <div class="microstrip"><div class="container micro-inner"><span>Applied mathematics</span><span>Numerical simulation</span><span>Scientific software</span><span>Research consulting</span></div></div>
+  <section class="section" id="about">
+    <div class="container about">
+      <div>
+        <div class="kicker">01 / About</div>
+        <h2>Rigorous mathematics. Practical scientific insight.</h2>
+        <p class="lede">WEISHENGZHOU is a research-focused business working in scientific research and technology development, with particular emphasis on applied mathematics, computational modelling, numerical methods and software-based problem solving.</p>
+        <p class="lede" style="margin-top:20px">Our areas of interest connect mathematical analysis with scientific and engineering applications, including wave propagation, resonance phenomena, inverse problems and computational approaches to complex physical systems.</p>
+      </div>
+      <div class="quote-panel"><div class="math">∂t²u − c²Δu = f</div><p>From mathematical theory to computational methods and research-led technical solutions.</p><div class="small">Research · Modelling · Computation</div></div>
+    </div>
+  </section>
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-top"><div class="kicker">02 / Services</div><h2>Scientific and technical services</h2><p class="lede">Research-oriented support for computational and mathematical challenges, tailored to the scope and requirements of each project.</p></div>
+      <div class="service-grid">
+        <article class="service"><div class="s-number">01</div><h3>Mathematical Modelling &amp; Algorithms</h3><p>Formulation and analysis of mathematical models, numerical algorithms and computational approaches for scientific and engineering problems.</p></article>
+        <article class="service"><div class="s-number">02</div><h3>Numerical Simulation</h3><p>Computational investigation of mathematical models, wave phenomena, scattering behaviour and other physics-based systems.</p></article>
+        <article class="service"><div class="s-number">03</div><h3>Scientific Software Development</h3><p>Development of research-oriented software, computational workflows, prototype algorithms and technical tools for scientific computing.</p></article>
+        <article class="service"><div class="s-number">04</div><h3>Research Consulting &amp; Data Analysis</h3><p>Specialist technical input, mathematical analysis, data interpretation and collaboration on research and development activities.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="expertise">
+    <div class="container"><div class="section-top"><div class="kicker">03 / Expertise</div><h2>Focused areas of research</h2><p class="lede">An academic research background informs the mathematical themes represented below.</p></div>
+      <div class="areas-grid"><div class="area"><span>01.</span> Acoustic and elastic wave scattering</div><div class="area"><span>02.</span> Resonance in high-contrast media</div><div class="area"><span>03.</span> Inverse scattering and shape reconstruction</div><div class="area"><span>04.</span> Numerical methods and spectral sampling</div><div class="area"><span>05.</span> Scientific algorithms and computation</div><div class="area"><span>06.</span> Applied mathematics for engineering</div></div>
+    </div>
+  </section>
+  <section class="section publications" id="publications">
+    <div class="container"><div class="section-top"><div class="kicker">04 / Selected research</div><h2>Publications &amp; preprints</h2></div>
+      <p class="pub-intro">Selected scientific research co-authored by Weisheng Zhou. These references illustrate relevant individual research experience; they are not presented as publications issued or sponsored by the company.</p>
+      <div class="pub-list">
+        <article class="pub-item"><div class="pub-year">2025</div><div><h3 class="pub-title">Quasi-Minnaert resonances in high-contrast acoustic structures and applications to invisibility cloaking</h3><p class="pub-note">Journal of Computational Physics · Quasi-Minnaert resonance, high-contrast acoustic media, wave localisation and cloaking phenomena</p></div><a class="pub-action" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1016/j.jcp.2025.114310">Read paper ↗</a></article>
+        <article class="pub-item"><div class="pub-year">2026</div><div><h3 class="pub-title">Robust shape reconstruction of elastic impenetrable scatterers via monotonicity spectral sampling methods</h3><p class="pub-note">arXiv preprint · Inverse elastic scattering, monotonicity methods and noise-robust spectral sampling</p></div><a class="pub-action" target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2607.09062">Read preprint ↗</a></article>
+        <article class="pub-item"><div class="pub-year">2026</div><div><h3 class="pub-title">Stress concentration via quasi-Minnaert resonance in bubble-elastic structures and applications</h3><p class="pub-note">Journal of Computational Physics · Resonant elastic fields and stress concentration in bubble–elastic structures</p></div><a class="pub-action" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1016/j.jcp.2026.115146">Read paper ↗</a></article>
+        <article class="pub-item"><div class="pub-year">2026</div><div><h3 class="pub-title">Sub-wavelength wave patterns for high-contrast inclusions in two-dimensional elasticity</h3><p class="pub-note">Research preprint · Sub-wavelength behaviour, high-contrast inclusions and two-dimensional elastic wave propagation</p></div><a class="pub-action" target="_blank" rel="noopener noreferrer" href="https://www.researchgate.net/publication/414235511_Sub-wavelength_wave_patterns_for_high-contrast_inclusions_in_two-dimensional_elasticity">View research ↗</a></article>
+      </div>
+      <p class="research-note">Publication details and status should be updated as new versions become available. The publications are cited for the associated researcher's academic contributions, not as proof of completed commercial engagements.</p>
+    </div>
+  </section>
+  <section class="contact" id="contact">
+    <div class="container"><div class="contact-panel"><div><div class="kicker" style="color:#99d4c4">05 / Contact</div><h2>Discuss a research or technical enquiry.</h2><p>For enquiries relating to scientific computing, mathematical modelling, numerical simulation, software development or research collaboration, please get in touch.</p></div>
+      <div class="contact-meta"><small>Business contact</small><p class="placeholder"><!-- REPLACE THE FOLLOWING LINE with your real, monitored business email address before publishing. -->[ADD YOUR REAL BUSINESS EMAIL BEFORE PUBLISHING]</p></div>
+    </div></div>
+  </section>
+</main>
+<footer><div class="container footer-inner"><div><div class="smallbrand">WEISHENGZHOU</div><p>Scientific research · Applied mathematics · Technology development</p></div><div class="footer-right">© <span id="year">2026</span> WEISHENGZHOU.<br>Business registration details must match official records.</div></div></footer>
+<script>document.getElementById('year').textContent = String(new Date().getFullYear());</script>
+</body>
+</html>
